@@ -1,28 +1,22 @@
 body{
- 
- text-align: center; 
  transition: 700ms;
  margin: 0px;
- 
  display: flex;
  justify-content: center;
  flex-wrap: wrap;
- 
-
- 
 }
 
-#likeABody{
-    position: relative;
-}
+
 .body{
     background-color: rgb(255, 255, 255);
     transition:700ms;
     
 }
+
 .newBody{
   background-color: rgb(155, 155, 155);
 }
+
 #start{
     width: 100%;
     display: flex;
@@ -39,42 +33,12 @@ body{
     background-image: url(../images/treee.png);
 }
 #familyMain{
+    width: 1024px;
+    display: flex;
+    flex-wrap: wrap;
+
     
-    
-    width: 100%;
-    
-    margin-left: auto ;
-    margin-right: auto ;
-    text-align: center ;
   }
-
-.inFamily{
-    width: fit-content;
-    margin-top: 20px;
-    width: 100%;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 5px;
-    margin-right: 5px;
-
-}
-
-#kidPhotoArea{
-    width:300px;
-    min-width: 300px;
-    display: flex;
-
-}
-
-
-#grandParentPhotoArea{
-    width:100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
 #headP{
     font-family: 'Comfortaa', cursive;
@@ -88,41 +52,105 @@ p{
     color: rgb(20, 44, 85);
 
 }
-.picContainer{
-    
-    transition: 700ms;
-    width: 600px;
-    background-color: rgb(255, 255, 255);
+/* 
+отрисовка семейного дерева */
+
+
+#kid{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#kidPic{
+    max-width: 450px;
+    object-fit: cover;
     border-radius: 30px;
-    height: 300px;
+    border:10px solid white; 
+    transition: 200ms;
+
+}
+
+#kidPic:hover{
+    max-width: 460px;
+    object-fit: cover;
+    border-radius: 30px;
+    border: 5px solid white; 
+    transition: 200ms;
+
+
+}
+
+#parents{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3px 3px;
+}
+
+
+#momPic,#dadPic{
+    max-width: 350px;
+    border-radius: 30px;
+    object-fit: cover;
+    border:10px solid white;
+    transition: 200ms;
+    margin: 3px 3px;
+}
+#momPic:hover,#dadPic:hover{
+    max-width: 360px;
+    border-radius: 30px;
+    object-fit: cover;
+    border: 5px solid white;
+    transition: 200ms;
+    margin: 3px 3px;
+}
+
+#grandParents{
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin: 3px 3px;
+}
+#gm1Pic,#gm2Pic,#gp1Pic,#gp2Pic{
+    max-width: 220px;
+    border-radius: 30px;
+    object-fit: cover;
+    border:10px solid white;
+    transition: 200ms;
+    margin: 3px 3px;
+
+}
+#gm1Pic:hover,#gm2Pic:hover,#gp1Pic:hover,#gp2Pic:hover{
+    max-width: 230px;
+    border-radius: 30px;
+    object-fit: cover;
+    border:5px solid white;
+    transition: 200ms;
+    margin: 3px 3px;
+
+}
+#parentPicContainer{
+    display: flex;
     flex-wrap: wrap;
-    
-}   
-
-
-
-.picture{
-    
-    margin: 5px;
-    width: 270px;
-    height: 270px;
-    border-radius: 27px;
-    background-size: 100%;
-    transition:200ms;
+    align-items: center;
+    justify-content: center;
 }
-.picture:hover{
-    
-    
-    width: 285px;
-    height: 285px;
-    border-radius: 28px;
-    background-size: 100%;
-    transition:200ms;
-    
+
+.picContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
+
+
+
+
+
 
 footer{
     
@@ -144,6 +172,9 @@ footer:hover{
     font-size: 27px;
     color: rgb(78, 78, 78);
 }
+
+/* 
+отрисовка персональной карточки  */
 
 .openCard{
     width: 80%;
@@ -264,115 +295,108 @@ a{
 }
 
 
+
+
 @media screen and (max-width: 1091px){
 
-    #grandParentPhotoArea{
-        max-width: 300px;
-        margin-top: 300px;
-    }
-
-    .picture{
-    
-        margin: 5px;
-        width: 270px;
-        height: 270px;
-        border-radius: 27px;
-        background-size: 100%;
-        transition:200ms;
-    }
-    .picture:hover{
-                
-        width: 277px;
-        height: 277px;
-        border-radius: 28px;
-        background-size: 100%;
-        transition:200ms;
-        margin: 0px;
-
-    }
-
-    #parentPicContainer1{
-        width: 600px;
-        height: 300px;
-    }
-
-    #kidPicContainer{
-        width: 300px;
-        height: 300px;
-    }
-
-    .picContainer{
-        background-color: rgb(255, 255, 255);
-        width: 300px;
-        height: 600px;
-        transition: 700ms;
+    #kid{
         width: 100%;
-        border-radius: 30px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        
-    }   
-    .inFamily{
-        width: fit-content;
-        margin-top: 20px;
-        width: 100%;
-        
-        border-radius: 30px;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-left: 5px;
-        margin-right: 5px;
+        
+    }
+    
+    
+    #kidPic{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        object-fit: cover;
+        border-radius: 20px;
+        border:10px solid white; 
+        transition: 200ms;
     
     }
-     
+    
+    #parents{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3px 3px;
+    }
+    
+    
+    #momPic,#dadPic{
+        max-width: 45%;
+        border-radius: 20px;
+        object-fit: cover;
+        border:10px solid white;
+        transition: 200ms;
+        margin: 3px 3px;
+    }
+   
+    
+    #grandParents{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 3px 3px;
+        
+    }
+    #gm1Pic,#gm2Pic,#gp1Pic,#gp2Pic{
+        max-width: 40%;
+        border-radius: 20px;
+        object-fit: cover;
+        border:10px solid white;
+        transition: 200ms;
+        margin: 3px 3px;
+    
+    }
+   
+
+      
     #start{
         width: 100%;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        margin-top: 100px 0px;
         
     } 
     
     #forTreePic{
-        margin: 275px 0px;
-        width: 85%;
-        height: 900px;
+        
+        max-width: none;
+        
         display: flex;
         background-image: url(../images/treee.png);
-        background-size:contain;
+        background-position: center;
     }
 
     #headP{
+        margin: 0px;
         font-family: 'Comfortaa', cursive;
-        margin-bottom: 200px;
         width: 80%;
         text-align: center;
-        font-size: 50px;
+        font-size: 30px;
     }
 
+    
 
-
-    #familyMain{
-        height: 1200px;
-        width: 100%;
-        
-        margin-left: auto ;
-        margin-right: auto ;
-        text-align: center ;
-        
-    }
+   
 
     .openCard{
-        width: 85%;
+        max-width: none;
         background-color: rgb(255, 255, 255);
         border-radius: 15px;
-        height: 1200px;
+        
         position: -webkit-sticky;
         position: sticky;
-        top: 20px;
+        top: 7px;
         left: 10px;
         box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
         border: 10px solid white;
@@ -381,18 +405,20 @@ a{
     }
 
     .divForPhotoAndSwitchers{
-        width: 80%;
-        height: 800px;
+        max-width: 95%;
+        
         display: flex;
         justify-content: center;
         align-items: center;
     
     }
     .divForPhoto{
-        width: 80%;
-        height: 800px;
+        max-width: 90%;
+        
+        height: fit-content;
         border-radius: 15px;
-        background-size: 100%
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .divForCardContent{
@@ -414,25 +440,3 @@ a{
 
 
 
-#kidPic{
-        background-image: url(../images/alice1.jpg) ;
-    }
-
-#momPic{
-        background-image: url(../images/agatha.jpg) ;
-}    
-#dadPic{
-    background-image: url(../images/vova.jpg) ;
-} 
-#gm1Pic{
-    background-image: url(../images/gmtanya.jpg) ;
-}    
-#gp1Pic{
-background-image: url(../images/gpevgen.jpg) ;
-} 
-#gm2Pic{
-    background-image: url(../images/gmmarina.jpg) ;
-}    
-#gp2Pic{
-background-image: url(../images/gpvova.jpg) ;
-} 

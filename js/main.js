@@ -44,13 +44,15 @@ document.addEventListener('scroll',()=>{
    if (scrollPosition > scrollFirstLine){
      body.classList.remove('body');
      body.classList.add('newBody');
-     for (i=0;i<pic.length;i++);
-     //{pic[i].style.opacity = `1`;}
+     for (i=0;i<pic.length;i++)
+     {pic[i].style.opacity = `1`;
+     pic[i].style.transition = `700ms`;}
    }else{
      body.classList.remove('newBody');
      body.classList.add('body');
-     for (i=0;i<pic.length;i++);
-     //{pic[i].style.opacity = `0`;}
+     for (i=0;i<pic.length;i++)
+     {pic[i].style.opacity = `0`;
+     pic[i].style.transition = `700ms`;}
    }
 })
 
