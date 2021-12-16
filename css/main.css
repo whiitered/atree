@@ -138,7 +138,8 @@ p{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    margin: 0px 3px;
 }
 
 .picContainer{
@@ -319,6 +320,17 @@ a{
         transition: 200ms;
     
     }
+    #kidPic:hover{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        object-fit: cover;
+        border-radius: 20px;
+        border:10px solid white; 
+        transition: 200ms;
+    
+    }
     
     #parents{
         width: 100%;
@@ -337,18 +349,27 @@ a{
         transition: 200ms;
         margin: 3px 3px;
     }
+    #momPic:hover,#dadPic:hover{
+        max-width: 45%;
+        border-radius: 20px;
+        object-fit: cover;
+        border:10px solid white;
+        transition: 200ms;
+        margin: 3px 3px;
+    }
+
    
     
     #grandParents{
         width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
         margin: 3px 3px;
         
     }
     #gm1Pic,#gm2Pic,#gp1Pic,#gp2Pic{
-        max-width: 40%;
+        width: 90%;
         border-radius: 20px;
         object-fit: cover;
         border:10px solid white;
@@ -356,6 +377,17 @@ a{
         margin: 3px 3px;
     
     }
+
+    #gm1Pic:hover,#gm2Pic:hover,#gp1Pic:hover,#gp2Pic:hover{
+        width: 90%;
+        border-radius: 20px;
+        object-fit: cover;
+        border:10px solid white;
+        transition: 200ms;
+        margin: 3px 3px;
+    
+    }
+   
    
 
       
