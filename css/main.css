@@ -153,7 +153,7 @@ p{
 
 
 
-footer{
+#footer{
     
     width: 100%;
     height: 150px;
@@ -191,7 +191,7 @@ footer:hover{
     z-index: 5;
 }
 
-.closeButtonDiv{
+.closeButtonDivTop{
     width: 100%;
     display: flex;
     justify-content: right;
@@ -199,6 +199,17 @@ footer:hover{
     
 
 }
+
+.closeButtonDivTop{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    
+
+}
+
+
 .xButtonSpan{
     display: flex;
     align-items: center;
@@ -210,6 +221,7 @@ footer:hover{
     right: 10px;
     top: 10px;
     transition: 200ms;
+    
 }
 .xButtonSpan:hover{
     font-size: 27px;
@@ -229,20 +241,22 @@ footer:hover{
     align-items: center;
 
 }
-.divForPhoto{
-    
-    width: 450px;
-    height: 500px;
+.imgForPhoto{
+    max-width: 95%;
+    max-height: 500px;
+    object-fit: cover;
     border-radius: 15px;
-    background-size: 100%
+    
+    
 }
-
+/* Контейнер для имени и краткого описания */
 .divForShortDescription{
     display:flex;
     flex-wrap: wrap;
     width: 50%;
 }
 
+/* Имя человека в открытой карточке */
 .personNameP{
     width: 100%;
     display: flex;
@@ -250,16 +264,17 @@ footer:hover{
     justify-content: center;
     font-size: 32px;
     font-family: 'Comfortaa', cursive;
-}
 
+}
+/* Краткое описание для фото в карточке */
 .shortDescriptionP{
   width: 100%;
   font-size: 20px;
-  
+  text-align: center;  
   font-family: 'Comfortaa', cursive;
 
 }
-
+/* Контейнер для переключателей в карточке человека */
 .divForSwitchers{
     width: 100%;
     display: flex;
@@ -281,7 +296,10 @@ footer:hover{
     border: 5px white solid;
     box-shadow: 0 0px 6px 0 rgb(32 33 36 / 28%);
     margin: 5px;
-    transition:200ms
+    transition:200ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
 
 }
@@ -295,16 +313,38 @@ a{
     color: darkgray;
 }
 
+.closeButtonDivBot{
+ width: 0px;
+ height: 0px;   
+ visibility: hidden;
+
+}
 
 
+@media screen and (max-width: 1000px){
 
-@media screen and (max-width: 1091px){
+    
+
+
+    .closeButtonDivTop{
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+        
+    
+    }
+    
 
     #kid{
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding:0px 5px;
         
     }
     
@@ -316,7 +356,7 @@ a{
         width: 95%;
         object-fit: cover;
         border-radius: 20px;
-        border:10px solid white; 
+        border:5px solid white; 
         transition: 200ms;
     
     }
@@ -325,9 +365,10 @@ a{
         justify-content: center;
         align-items: center;
         width: 95%;
+        max-width: 450px;
         object-fit: cover;
         border-radius: 20px;
-        border:10px solid white; 
+        border:5px solid white; 
         transition: 200ms;
     
     }
@@ -337,23 +378,24 @@ a{
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 3px 3px;
+        margin: 7px 3px 1px ;
+        padding:0px 5px
     }
     
     
     #momPic,#dadPic{
-        max-width: 45%;
+        max-width: 44%;
         border-radius: 20px;
         object-fit: cover;
-        border:10px solid white;
+        border:5px solid white;
         transition: 200ms;
         margin: 3px 3px;
     }
     #momPic:hover,#dadPic:hover{
-        max-width: 45%;
+        max-width: 44%;
         border-radius: 20px;
         object-fit: cover;
-        border:10px solid white;
+        border:5px solid white;
         transition: 200ms;
         margin: 3px 3px;
     }
@@ -366,26 +408,39 @@ a{
         justify-content: center;
         align-items: center;
         margin: 3px 3px;
+        flex-wrap: wrap;
         
     }
+
+    #parentPicContainer{
+        width: 44%;
+        padding: 0px 3px;
+        margin: 0px 4px;
+    }
     #gm1Pic,#gm2Pic,#gp1Pic,#gp2Pic{
-        width: 90%;
+        width: 98%;
+        max-width: none;
+
         border-radius: 20px;
         object-fit: cover;
-        border:10px solid white;
+        border:5px solid white;
         transition: 200ms;
-        margin: 3px 3px;
+        margin: 3px 0px;
     
     }
 
     #gm1Pic:hover,#gm2Pic:hover,#gp1Pic:hover,#gp2Pic:hover{
-        width: 90%;
+        max-width: none;
+        width: 98%;
         border-radius: 20px;
         object-fit: cover;
-        border:10px solid white;
+        border:5px solid white;
         transition: 200ms;
-        margin: 3px 3px;
+        margin: 3px 0px;
     
+    }
+    .picContainer{
+        justify-content: center;
     }
    
    
@@ -396,7 +451,8 @@ a{
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        margin-top: 100px 0px;
+        margin: 30px 0px 50px 0px;
+
         
     } 
     
@@ -422,36 +478,45 @@ a{
    
 
     .openCard{
-        max-width: none;
+
+        width: 90%;
+        height:80%;
         background-color: rgb(255, 255, 255);
         border-radius: 15px;
-        
-        position: -webkit-sticky;
-        position: sticky;
-        top: 7px;
+        position: fixed;
+        position: fixed;
+        top: 17px;
         left: 10px;
         box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
         border: 10px solid white;
         z-index: 5;
         flex-wrap: wrap;
+        overflow-y: auto;
     }
-
+    /* контейнер для картинки в карточке */
     .divForPhotoAndSwitchers{
-        max-width: 95%;
-        
+        width: 100%;
+        height: 60%;
         display: flex;
         justify-content: center;
         align-items: center;
+        visibility: visible;
     
     }
-    .divForPhoto{
-        max-width: 90%;
-        
-        height: fit-content;
+
+    
+
+
+    /* Картинка в карточке */
+    .imgForPhoto{
+        width: 100%;
+        height: 100%;
         border-radius: 15px;
-        background-position: center;
-        background-repeat: no-repeat;
+        object-fit: cover;
+        
+        
     }
+
 
     .divForCardContent{
         width: 100%;
@@ -460,11 +525,369 @@ a{
         align-items: center;
         flex-wrap: wrap;
     }
+    
+    /* Контейнер для имени и краткого описания */
+    .divForShortDescription{
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    }
+
+    /* Имя человека в открытой карточке */
+    .personNameP{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-family: 'Comfortaa', cursive;
+    margin: 7px 2px;
+
+    }
+    /* Краткое описание для фото в карточке */
+    .shortDescriptionP{
+    width: 100%;
+    font-size: 16px;
+    margin: 7px 0px;
+    font-family: 'Comfortaa', cursive;
+  
+    }
+
+    /* Контейнер для переключателей в карточке человека */
+    .divForSwitchers{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    margin-top: 10px;
+    position: absolute;
+        bottom: 30px;
+
+    
+    }
+    /* переключатели картинок */
+    .switchersP{
+        height: 50px;
+        width: 50px;
+        font-size: 30px;
+        border-radius: 30px;
+        color: black;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        border: 5px white solid;
+        box-shadow: 0 0px 6px 0 rgb(32 33 36 / 28%);
+        margin: 5px;
+        transition:200ms;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    
+    }
+    .closeButtonDivBot{
+        
+        height: 50px;
+        width: 50px;
+        font-size: 30px;
+        border-radius: 30px;
+        color: black;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        border: 5px white solid;
+        box-shadow: 0 0px 6px 0 rgb(32 33 36 / 28%);
+        margin: 5px;
+        transition:200ms;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: visible;
+    }
+
 
 
 
 
     
+
+}
+@media screen and (max-width: 321px){
+        
+
+
+    .closeButtonDivTop{
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+        
+    
+    }
+    
+
+    #kid{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding:0px 5px;
+        
+    }
+    
+    
+    #kidPic{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        object-fit: cover;
+        border-radius: 20px;
+        border:5px solid white; 
+        transition: 200ms;
+    
+    }
+    #kidPic:hover{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        object-fit: cover;
+        border-radius: 20px;
+        border:5px solid white; 
+        transition: 200ms;
+    
+    }
+    
+    #parents{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 7px 3px 1px ;
+        padding:0px 5px
+    }
+    
+    
+    #momPic,#dadPic{
+        max-width: 45%;
+        border-radius: 20px;
+        object-fit: cover;
+        border:5px solid white;
+        transition: 200ms;
+        margin: 3px 3px;
+    }
+    #momPic:hover,#dadPic:hover{
+        max-width: 45%;
+        border-radius: 20px;
+        object-fit: cover;
+        border:5px solid white;
+        transition: 200ms;
+        margin: 3px 3px;
+    }
+
+   
+    
+    #grandParents{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3px 3px;
+        flex-wrap: wrap;
+        
+    }
+
+    #parentPicContainer{
+        width: 44%;
+        padding: 0px 3px;
+        margin: 0px 4px;
+    }
+    #gm1Pic,#gm2Pic,#gp1Pic,#gp2Pic{
+        width: 98%;
+        max-width: none;
+
+        border-radius: 20px;
+        object-fit: cover;
+        border:5px solid white;
+        transition: 200ms;
+        margin: 3px 0px;
+    
+    }
+
+    #gm1Pic:hover,#gm2Pic:hover,#gp1Pic:hover,#gp2Pic:hover{
+        max-width: none;
+        width: 98%;
+        border-radius: 20px;
+        object-fit: cover;
+        border:5px solid white;
+        transition: 200ms;
+        margin: 3px 0px;
+    
+    }
+   
+   
+
+      
+    #start{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 30px 0px 50px 0px;
+
+        
+    } 
+    
+    #forTreePic{
+        
+        max-width: none;
+        
+        display: flex;
+        background-image: url(../images/treee.png);
+        background-position: center;
+    }
+
+    #headP{
+        margin: 0px;
+        font-family: 'Comfortaa', cursive;
+        width: 80%;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    
+
+   
+
+    .openCard{
+
+        width: 90%;
+        height:90%;
+        background-color: rgb(255, 255, 255);
+        border-radius: 15px;
+        position: fixed;
+        position: fixed;
+        top: 17px;
+        left: 5px;
+        box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+        border: 10px solid white;
+        z-index: 5;
+        flex-wrap: wrap;
+        overflow-y: auto;
+    }
+    /* контейнер для картинки в карточке */
+    .divForPhotoAndSwitchers{
+        width: 100%;
+        height: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: visible;
+    
+    }
+
+    
+
+
+    /* Картинка в карточке */
+    .imgForPhoto{
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        object-fit: cover;
+        max-height: 350px;
+        
+        
+    }
+
+
+    .divForCardContent{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    /* Контейнер для имени и краткого описания */
+    .divForShortDescription{
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    }
+
+    /* Имя человека в открытой карточке */
+    .personNameP{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-family: 'Comfortaa', cursive;
+    margin: 7px 2px;
+
+    }
+    /* Краткое описание для фото в карточке */
+    .shortDescriptionP{
+    width: 100%;
+    font-size: 16px;
+    margin: 7px 0px;
+    font-family: 'Comfortaa', cursive;
+  
+    }
+
+    /* Контейнер для переключателей в карточке человека */
+    .divForSwitchers{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    margin-top: 10px;
+    position: absolute;
+        bottom: 30px;
+
+    
+    }
+    /* переключатели картинок */
+    .switchersP{
+        height: 50px;
+        width: 50px;
+        font-size: 30px;
+        border-radius: 30px;
+        color: black;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        border: 5px white solid;
+        box-shadow: 0 0px 6px 0 rgb(32 33 36 / 28%);
+        margin: 5px;
+        transition:200ms;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    
+    }
+    .closeButtonDivBot{
+        
+        height: 50px;
+        width: 50px;
+        font-size: 30px;
+        border-radius: 30px;
+        color: black;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        border: 5px white solid;
+        box-shadow: 0 0px 6px 0 rgb(32 33 36 / 28%);
+        margin: 5px;
+        transition:200ms;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: visible;
+    }
+
+
+
 
 }
 

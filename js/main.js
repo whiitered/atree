@@ -11,7 +11,7 @@ let footer = document.getElementById('footer');
 const familyObj = {
   Alice: {
     personName: "Алиса Торицина",
-    personFotoArr: ['url(./images/Alice/Alice1.jpg)','url(./images/Alice/Alice2.jpg)','url(./images/Alice/Alice3.jpg)'],
+    personFotoArr: ['./images/Alice/Alice1.jpg','./images/Alice/Alice2.jpg','./images/Alice/Alice3.jpg'],
     personInterest: ['Гурман и любитель красивой жизни','Решает сложные задачи','Настоящая принцесса']
   },
   
@@ -64,15 +64,15 @@ body.addEventListener('click', el=>{
     openCard = document.createElement('div');
     body.insertBefore(openCard,familyMain);
     openCard.classList.add('openCard');
-    //creating a close button
-    const closeButtonDiv = document.createElement('div');
+    //creating a Top close button
+    const closeButtonDivTop = document.createElement('div');
     const xButtonSpan = document.createElement('span');
-    openCard.appendChild(closeButtonDiv);
-     closeButtonDiv.classList.add('closeButtonDiv');
-     closeButtonDiv.appendChild(xButtonSpan);
+    openCard.appendChild(closeButtonDivTop);
+     closeButtonDivTop.classList.add('closeButtonDivTop');
+     closeButtonDivTop.appendChild(xButtonSpan);
      xButtonSpan.classList.add('xButtonSpan');
      xButtonSpan.innerHTML = 'X';
-      closeButtonDiv.addEventListener('click', ()=>{
+      closeButtonDivTop.addEventListener('click', ()=>{
         closeCard()
       });
 
@@ -80,7 +80,8 @@ body.addEventListener('click', el=>{
       const openCardContent = (arg)=>{
     
         let iter=0;
-        divForPhoto.style.backgroundImage = familyObj[arg].personFotoArr[iter];
+
+        imgForPhoto.src = familyObj[arg].personFotoArr[iter];
         personNameP.innerHTML = familyObj[arg].personName;
         shortDescriptionP.innerHTML = familyObj[arg].personInterest[iter];
         
@@ -92,7 +93,7 @@ body.addEventListener('click', el=>{
             }else{
              iter=0;
            };
-          divForPhoto.style.backgroundImage = familyObj[arg].personFotoArr[iter];
+          imgForPhoto.src = familyObj[arg].personFotoArr[iter];
           personNameP.innerHTML = familyObj[arg].personName;
           shortDescriptionP.innerHTML = familyObj[arg].personInterest[iter];
         })
@@ -103,7 +104,7 @@ body.addEventListener('click', el=>{
           }else{
             iter = familyObj[arg].personFotoArr.length-1;
           }
-          divForPhoto.style.backgroundImage = familyObj[arg].personFotoArr[iter];
+          imgForPhoto.src = familyObj[arg].personFotoArr[iter];
           personNameP.innerHTML = familyObj[arg].personName;
           shortDescriptionP.innerHTML = familyObj[arg].personInterest[iter];
         })
@@ -117,7 +118,7 @@ body.addEventListener('click', el=>{
       divForCardContent.classList.add('divForCardContent');
       
       
-      //photo and switchers part
+      //photo part
       const divForPhotoAndSwitchers = document.createElement('div');
       divForCardContent.appendChild(divForPhotoAndSwitchers);
       divForPhotoAndSwitchers.classList.add('divForPhotoAndSwitchers');
@@ -128,9 +129,9 @@ body.addEventListener('click', el=>{
       divForShortDescription.classList.add('divForShortDescription');
       
       //photo container
-      const divForPhoto = document.createElement('div');
-      divForPhotoAndSwitchers.appendChild(divForPhoto);
-      divForPhoto.classList.add('divForPhoto');
+      const imgForPhoto = document.createElement('img');
+      divForPhotoAndSwitchers.appendChild(imgForPhoto);
+      imgForPhoto.classList.add('imgForPhoto');
 
       const personNameP = document.createElement('p');
       divForShortDescription.appendChild(personNameP);
@@ -156,6 +157,17 @@ body.addEventListener('click', el=>{
 
       backSwitcher.innerHTML = '<';
       forwardSwitcher.innerHTML = '>';
+      //creating a Bot close button
+      const closeButtonDivBot = document.createElement('div');
+      const xButtonSpanBot = document.createElement('span');
+      divForSwitchers.appendChild(closeButtonDivBot);
+      closeButtonDivBot.classList.add('closeButtonDivBot');
+      closeButtonDivBot.appendChild(xButtonSpanBot);
+      xButtonSpanBot.classList.add('xButtonSpan');
+      xButtonSpanBot.innerHTML = 'X';
+      closeButtonDivBot.addEventListener('click', ()=>{
+        closeCard()
+      });
 
       
 
